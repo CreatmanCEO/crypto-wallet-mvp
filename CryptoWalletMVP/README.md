@@ -1,97 +1,152 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# CryptoWallet MVP
 
-# Getting Started
+Кроссплатформенное мобильное приложение криптокошелька на React Native с поддержкой мультивалютного холодного хранения.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Функциональность
 
-## Step 1: Start Metro
+### MVP (Текущая версия)
+- [x] Базовая навигация
+  - TabNavigator (Wallet, Market, News, Settings)
+  - Модальные экраны (Send, Receive, Security)
+  - Анимированные переходы
+- [x] Базовые UI компоненты
+  - Typography с поддержкой всех стилей
+  - Card с поддержкой тем и вариантов
+  - SVG иконки с поддержкой тем
+  - Адаптивные кнопки и инпуты
+- [ ] Криптокошелек
+  - [ ] Создание/импорт кошелька
+  - [ ] Просмотр баланса
+  - [ ] Отправка/получение
+  - [ ] Поддержка мультивалютности
+- [ ] Интеграция с OKX
+  - [ ] Торговля
+  - [ ] История операций
+  - [ ] Статистика
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Планируемые функции
+- Новостной модуль с агрегацией из разных источников
+- Маркетплейс NFT
+- Расширенная аналитика портфеля
+- DeFi интеграции
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 🛠 Технический стек
 
-```sh
-# Using npm
+- React Native 0.78.0
+- TypeScript 5.0.4
+- Trust Wallet Core SDK
+- Web3.js
+- Redux Toolkit + Redux Persist
+- React Navigation 6
+- React Native Reanimated
+- React Query
+- react-native-keychain
+
+## 📱 Требования
+
+- Node.js >= 18
+- Java Development Kit (JDK) 17
+- Android Studio
+- Android SDK API 35
+- Git
+
+## 🔧 Установка и запуск
+
+```bash
+# Клонирование репозитория
+git clone https://github.com/username/crypto-wallet-mvp.git
+cd crypto-wallet-mvp
+
+# Установка зависимостей
+npm install
+
+# Запуск Metro сервера
 npm start
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
+# Запуск на Android
 npm run android
 
-# OR using Yarn
-yarn android
+# Запуск тестов
+npm test
 ```
 
-### iOS
+## 📋 Структура проекта
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```
+src/
+├── app/              # Конфигурация приложения
+│   ├── store.ts     # Redux store
+│   └── hooks.ts     # Кастомные хуки
+├── core/             # Ядро приложения
+│   ├── wallet/      # Интеграция Trust Wallet Core
+│   └── blockchain/  # Web3 функционал
+├── features/         # Основной функционал
+│   ├── wallet/      # Операции с кошельком
+│   ├── market/      # Торговый функционал
+│   ├── news/        # Новостной модуль
+│   └── settings/    # Настройки приложения
+├── services/         # Внешние сервисы
+│   ├── api/        # API интеграции
+│   └── storage/    # Хранение данных
+├── shared/          # Общие компоненты
+│   ├── components/ # UI компоненты
+│   ├── hooks/      # Кастомные хуки
+│   └── utils/      # Утилиты
+└── navigation/      # Навигация
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🔐 Безопасность
 
-```sh
-bundle exec pod install
+- [ ] Шифрование приватных ключей
+- [ ] Биометрическая аутентификация
+- [ ] Защита от скриншотов
+- [ ] Проверка root/jailbreak
+- [ ] Безопасное хранение данных
+- [ ] 2FA для критических операций
+
+## 🧪 Тестирование
+
+```bash
+# Запуск всех тестов
+npm test
+
+# Запуск с watch режимом
+npm test -- --watch
+
+# Проверка покрытия
+npm test -- --coverage
+
+# Запуск E2E тестов
+npm run e2e
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 📦 Сборка
 
-```sh
-# Using npm
-npm run ios
+```bash
+# Android Debug
+cd android && ./gradlew assembleDebug
 
-# OR using Yarn
-yarn ios
+# Android Release
+cd android && ./gradlew assembleRelease
+
+# Очистка кэша
+cd android && ./gradlew clean
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 🔄 CI/CD
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- GitHub Actions для автоматизации тестов
+- Автоматическая сборка APK
+- Деплой в Firebase App Distribution
+- Проверка типов и линтинг
 
-## Step 3: Modify your app
+## 📚 Документация
 
-Now that you have successfully run the app, let's make changes!
+- [Руководство разработчика](./DEVELOPMENT.md)
+- [История изменений](./CHANGELOG.md)
+- [Контрольный журнал](./CONTROL.md)
+- [Референс сборки](./BUILD_REFERENCE.md)
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 📄 Лицензия
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+MIT

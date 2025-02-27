@@ -1,0 +1,1 @@
+export default 'wallet-card-bg.png'; 
